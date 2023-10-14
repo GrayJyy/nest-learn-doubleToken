@@ -8,6 +8,9 @@ dependencies:
   '@nestjs/common':
     specifier: ^10.0.0
     version: 10.0.0(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+  '@nestjs/config':
+    specifier: ^3.1.1
+    version: 3.1.1(@nestjs/common@10.0.0)(reflect-metadata@0.1.13)
   '@nestjs/core':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.0.0)(@nestjs/platform-express@10.0.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -29,6 +32,9 @@ dependencies:
   class-validator:
     specifier: ^0.14.0
     version: 0.14.0
+  js-yaml:
+    specifier: ^4.1.0
+    version: 4.1.0
   mysql2:
     specifier: ^3.6.1
     version: 3.6.1
@@ -58,6 +64,9 @@ devDependencies:
   '@types/jest':
     specifier: ^29.5.2
     version: 29.5.2
+  '@types/js-yaml':
+    specifier: ^4.0.7
+    version: 4.0.7
   '@types/node':
     specifier: ^20.3.1
     version: 20.3.1
@@ -910,6 +919,20 @@ packages:
       tslib: 2.5.3
       uid: 2.0.2
 
+  /@nestjs/config@3.1.1(@nestjs/common@10.0.0)(reflect-metadata@0.1.13):
+    resolution: {integrity: sha512-qu5QlNiJdqQtOsnB6lx4JCXPQ96jkKUsOGd+JXfXwqJqZcOSAq6heNFg0opW4pq4J/VZoNwoo87TNnx9wthnqQ==}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      reflect-metadata: ^0.1.13
+    dependencies:
+      '@nestjs/common': 10.0.0(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      dotenv: 16.3.1
+      dotenv-expand: 10.0.0
+      lodash: 4.17.21
+      reflect-metadata: 0.1.13
+      uuid: 9.0.0
+    dev: false
+
   /@nestjs/core@10.0.0(@nestjs/common@10.0.0)(@nestjs/platform-express@10.0.0)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-HFTdj4vsF+2qOaq97ZPRDle6Q/KyL5lmMah0/ZR0ie+e1/tnlvmlqw589xFACTemLJFFOjZMy763v+icO9u72w==}
     requiresBuild: true
@@ -1226,6 +1249,10 @@ packages:
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
+    dev: true
+
+  /@types/js-yaml@4.0.7:
+    resolution: {integrity: sha512-RJZP9WAMMr1514KbdSXkLRrKvYQacjr1+HWnY8pui/uBTBoSgD9ZGR17u/d4nb9NpERp0FkdLBe7hq8NIPBgkg==}
     dev: true
 
   /@types/json-schema@7.0.13:
@@ -1692,7 +1719,6 @@ packages:
 
   /argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-    dev: true
 
   /array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
@@ -2364,6 +2390,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv-expand@10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dotenv@16.3.1:
     resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
@@ -3782,7 +3813,6 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
-    dev: true
 
   /jsesc@2.5.2:
     resolution: {integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==}
